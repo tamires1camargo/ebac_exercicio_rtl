@@ -17,12 +17,19 @@ const Post = () => {
     return (
         <div>
             <ul className={styles['post-comments']}>
-                {comments.map(({ comment, id }) => (
+                {comments.map(({ comment: string, id }) => (
+                    <>
                     <li className={styles['post-comment']} key={id}>
-                        <p className={styles['post-comment-content']}>
-                            {comment}
+                        <p data-testid="comentario-um" className={styles['post-comment-content']}>
+                            {'olá, mundo'}
                         </p>
                     </li>
+                    <li className={styles['post-comment']} key={id}>
+                        <p data-testid="comentario-dois" className={styles['post-comment-content']}>
+                            {'olá, universo'}
+                        </p>
+                    </li>
+                        </>
                 ))}
             </ul>
             <form onSubmit={handleAddComment} className={styles['post-comments-form']}>
